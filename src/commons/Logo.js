@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from 'styled-components';
 
-const Logo = () => {
+const Logo = ({ tailSize, headSize, centerSize, padding, alignment }) => {
   return (
-    <Container>
+    <Container padding={padding} alignment={alignment}>
       <LogoHolder>
-        <OvalTail tailSize={15} />
-        <OvalHead headSize={45}>
-          <div />
+        <OvalTail tailSize={tailSize} />
+        <OvalHead headSize={headSize}>
+          <OvalCenter centerSize={centerSize} />
         </OvalHead>
       </LogoHolder>
       <LogoText>
@@ -37,17 +37,18 @@ const OvalHead = styles.div`
   justify-content: center;
   align-items: center;
 
-  div {
-      width: 25px;
-      height: 25px;
-      border-radius: 25px;
-      background: #fff;
-  }
+`;
+
+const OvalCenter = styles.div`
+  width: ${props => `${props.centerSize}px`};
+  height: ${props => `${props.centerSize}px`};
+  border-radius: 100%;
+  background: #fff;
+
 `;
 
 const LogoText = styles.span`
-  display: inline-flex;
-  align-items: flex-end;
+margin-top: auto;
 
 span {
   margin-right: 5px;
@@ -61,7 +62,8 @@ span {
 
 const Container = styles.section`
   display: flex;
-  padding: 1rem;
+  padding: ${props => `${props.padding}px`};
+  justify-content: ${props => props.alignment};
 `;
 
 const LogoHolder = styles.span`
@@ -81,5 +83,13 @@ const InsuranceText = styles.div`
   text-transform: capitalize
   color: #084063
 `;
+
+Logo.defaultProps = {
+  tailSize: 15,
+  headSize: 45,
+  centerSize: 23,
+  padding: 14,
+  alignment: 'flex-start'
+};
 
 export default Logo;
