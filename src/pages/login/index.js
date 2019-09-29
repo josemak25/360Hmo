@@ -30,21 +30,30 @@ const Login = ({ inputFields }) => {
           ))}
           <CustomButton name="log in" bgColor="#a9a9a9" />
         </FormWrapper>
+        <ForgetPassword>
+          <span>
+            forgot password?
+            <Link>click here</Link>
+          </span>
+        </ForgetPassword>
       </LoginForm>
     </Container>
   );
 };
 
 const Container = styles.div`
-  //  border: 1px black solid;
+  //border: 1px black solid;
    height: 100vh;
    margin: 0 !important;
-  //  align-items: center !important; 
+  //align-items: center !important; 
 `;
 
 const LoginForm = styles.div`
-  // border: 1px black solid;
-  margin-top: 1rem !important;
+  //  border: 1px black solid;
+   margin-top: 1rem !important;
+   display: flex !important;
+   flex-direction: column;
+   justify-content: space-between;
 
   .home-logo {
     cursor: pointer
@@ -57,6 +66,12 @@ const FormWrapper = styles.form`
   margin-top: 1.5rem;
   width: 100% !important;
 
+`;
+
+const ForgetPassword = styles.div`
+  text-transform: capitalize
+  font-size: 10px;
+  margin-right: auto !important
 `;
 
 export default Login;
