@@ -42,14 +42,16 @@ const Login = ({ inputFields }) => {
 };
 
 const Container = styles.div`
-  //border: 1px black solid;
    height: 100vh;
    margin: 0 !important;
-  //align-items: center !important; 
+
+   @media only screen and (min-width: 411px) {
+    border: 1px pink solid;
+ }
+   
 `;
 
 const LoginForm = styles.div`
-  //  border: 1px black solid;
    margin-top: 1rem !important;
    display: flex !important;
    flex-direction: column;
@@ -59,10 +61,14 @@ const LoginForm = styles.div`
     cursor: pointer
   }
 
+
+  @media only screen and (min-width: 360px) {
+    margin-top: 5rem !important;
+ }
+
 `;
 
 const FormWrapper = styles.form`
-  // border: 1px red solid;
   margin-top: 1.5rem;
   width: 100% !important;
 
@@ -71,7 +77,11 @@ const FormWrapper = styles.form`
 const ForgetPassword = styles.div`
   text-transform: capitalize
   font-size: 10px;
-  margin-right: auto !important
+  margin-right: auto !important;
+
+  @media only screen and (min-width: 360px) {
+    margin-bottom: 8rem !important;
+ }
 `;
 
 export default Login;
