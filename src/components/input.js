@@ -1,13 +1,14 @@
 import React from 'react';
 import styles from 'styled-components';
 
-export default ({ onChange, placeholder, value, name, type }) => (
+export default ({ onChange, placeholder, value, name, type, id }) => (
   <CustomInput
     onChange={onChange}
     placeholder={placeholder}
     value={value}
     name={name}
     type={type}
+    id={id}
   />
 );
 

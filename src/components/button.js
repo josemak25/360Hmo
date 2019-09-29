@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from 'styled-components';
 
-export default ({ color, name, type, bgColor }) => (
-  <CustomButton bgColor={bgColor} color={color} type={type}>
+export default ({ color, name, type, bgColor, id }) => (
+  <CustomButton bgColor={bgColor} color={color} type={type} id={id}>
     {name}
   </CustomButton>
 );

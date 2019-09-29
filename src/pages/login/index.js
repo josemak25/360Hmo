@@ -26,9 +26,9 @@ const Login = ({ inputFields }) => {
         </Link>
         <FormWrapper onSubmit={handleSubmit}>
           {inputFields.map((field, i) => (
-            <CustomInput {...field} key={i} onChange={handleChange} />
+            <CustomInput {...field} key={i} onChange={handleChange} id="loginInput" />
           ))}
-          <CustomButton name="log in" bgColor="#a9a9a9" />
+          <CustomButton name="log in" bgColor="#a9a9a9" id="loginButton" />
         </FormWrapper>
         <ForgetPassword>
           <span>
@@ -45,8 +45,8 @@ const Container = styles.div`
    height: 100vh;
    margin: 0 !important;
 
-   @media only screen and (min-width: 411px) {
-    border: 1px pink solid;
+   @media only screen and (min-width: 600px) {
+    align-items: center !important;
  }
    
 `;
@@ -66,11 +66,36 @@ const LoginForm = styles.div`
     margin-top: 5rem !important;
  }
 
+
 `;
 
 const FormWrapper = styles.form`
   margin-top: 1.5rem;
   width: 100% !important;
+
+  @media only screen and (min-width: 600px) {
+    width: 60% !important;
+    margin: auto;
+    margin-top: 8rem;
+
+    #loginInput {
+      height: 4rem;
+    }
+
+    #loginButton {
+      height: 4rem;
+      font-weight: 550;
+    }
+  }
+  
+
+  @media only screen and (min-width: 1280px) {
+    width: 40% !important;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    width: 30% !important;
+  }
 
 `;
 
@@ -82,6 +107,20 @@ const ForgetPassword = styles.div`
   @media only screen and (min-width: 360px) {
     margin-bottom: 8rem !important;
  }
+
+ @media only screen and (min-width: 600px) {
+  width: 60% !important;
+  margin-top: 5rem;
+}
+
+@media only screen and (min-width: 1280px) {
+  width: 73% !important;
+}
+
+@media only screen and (min-width: 1440px) {
+  width: 85% !important;
+  font-size: 12px;
+}
 `;
 
 export default Login;
