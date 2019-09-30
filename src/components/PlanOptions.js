@@ -20,7 +20,7 @@ export default function PlanOptions() {
 									</CardDescription>
 
 								</CardContent>
-								<CardContent>
+								<CardContent style={{ display: 'flex', justifyContent: 'center' }}>
 									<Button
 										size='big'
 										content='Learn More'
@@ -37,7 +37,7 @@ export default function PlanOptions() {
 						<Grid.Column style={{ margin: '0 auto' }} width={4}>
 							<Card className='card-shadows'>
 								<Image size='big' src='/assets/undraw_back_to_school_inwc.svg' />
-								<CardContent>
+								<CardContent >
 									<CardHeader>
 										For Family & Loved Ones
 									</CardHeader>
@@ -46,7 +46,7 @@ export default function PlanOptions() {
 									</CardDescription>
 
 								</CardContent>
-								<CardContent>
+								<CardContent style={{ display: 'flex', justifyContent: 'center' }}>
 									<Button
 										size='big'
 										content='Learn More'
