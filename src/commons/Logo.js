@@ -1,22 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from 'styled-components';
 
 const Logo = ({ tailSize, headSize, centerSize, padding, alignment }) => {
   return (
-    <Container padding={padding} alignment={alignment}>
-      <LogoHolder>
-        <OvalTail tailSize={tailSize} />
-        <OvalHead headSize={headSize}>
-          <OvalCenter centerSize={centerSize} />
-        </OvalHead>
-      </LogoHolder>
-      <LogoText>
-        <span>60</span>
-      </LogoText>
-      <InsuranceText>
-        <span>health insurance</span>
-      </InsuranceText>
-    </Container>
+    <Link to='/'>
+      <Container padding={padding} alignment={alignment}>
+        <LogoHolder>
+          <OvalTail tailSize={tailSize} />
+          <OvalHead headSize={headSize}>
+            <OvalCenter centerSize={centerSize} />
+          </OvalHead>
+        </LogoHolder>
+        <LogoText>
+          <span>60</span>
+        </LogoText>
+        <InsuranceText>
+          <span>health insurance</span>
+        </InsuranceText>
+      </Container>
+    </Link>
   );
 };
 

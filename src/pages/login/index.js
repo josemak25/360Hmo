@@ -21,9 +21,7 @@ const Login = ({ inputFields }) => {
   return (
     <Container className="ui one column center aligned grid">
       <LoginForm className="column twelve wide">
-        <Link to="/" className="home-logo">
-          <Logo padding={0} alignment="center" />
-        </Link>
+        <Logo padding={0} alignment="center" />
         <FormWrapper onSubmit={handleSubmit}>
           {inputFields.map((field, i) => (
             <CustomInput {...field} key={i} onChange={handleChange} id="loginInput" />

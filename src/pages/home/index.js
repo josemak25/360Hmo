@@ -3,7 +3,6 @@ import HeroBanner from '../../components/HeroBanner';
 import Advantages from '../../components/Advantages';
 import PlanOptions from '../../components/PlanOptions';
 import NavBar from '../../commons/NavBar';
-import Footer from '../../commons/Footer';
 
 const index = () => {
 	return (
@@ -12,7 +11,6 @@ const index = () => {
 			<HeroBanner></HeroBanner>
 			<Advantages></Advantages>
 			<PlanOptions></PlanOptions>
-			<Footer />
 		</div>
 	);
 };
