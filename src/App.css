@@ -3,3 +3,30 @@
   padding: 0;
   box-sizing: content-box;
 }
+
+h1 {
+  color: #107BC0;
+  font-size: 3rem;
+  /* text-align: center */
+}
+
+
+p {
+  font-family: 'Avenir LT Std', 'Helvetica Nueue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  color: #4F4F4F;
+  font-size: 1rem;
+}
+
+.banner-paragraph {
+  font-size: 1.5rem;
+}
+
+h2 {
+  color: #107BC0;
+  font-size: 2rem
+}
+
+h3 {
+  color: #094063;
+}
