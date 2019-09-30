@@ -39,7 +39,7 @@ export default function NavBar() {
 		// 		</div>
 		// 	</Menu>
 		// ) : (
-		<Menu style={{ borderWidth: '0px', fontSize: '1.2rem' }} pointing secondary>
+		<Menu style={{ borderWidth: '0px', fontSize: '1.2rem' }} pointing secondary className='menu-shadows'>
 			<div className='ui container'>
 				<Logo as={Link} to='/'></Logo>
 				<div className='right item'>
