@@ -2,9 +2,9 @@ import React from 'react';
 import styles from 'styled-components';
 
 export default ({ color, name, type, bgColor, id }) => (
-  <CustomButton bgColor={bgColor} color={color} type={type} id={id}>
-    {name}
-  </CustomButton>
+	<CustomButton bgColor={bgColor} color={color} type={type} id={id}>
+		{name}
+	</CustomButton>
 );
 
 const CustomButton = styles.button`
@@ -25,5 +25,5 @@ const CustomButton = styles.button`
   `;
 
 CustomButton.defaultProps = {
-  color: '#fffffa'
+	color: '#fffffa'
 };
