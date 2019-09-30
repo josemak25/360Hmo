@@ -6,7 +6,7 @@ import PlanOptions from '../../components/PlanOptions';
 
 const index = () => {
 	return (
-		<div>
+		<div style={{ backgroundColor: '#fafafa' }}>
 			<Logo />
 			<HeroBanner></HeroBanner>
 			<Advantages></Advantages>
