@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from 'styled-components';
 
-export default ({ onChange, placeholder, value, name, type, id }) => (
+export default ({ onChange, placeholder, value, name, type, id, margin }) => (
   <CustomInput
     onChange={onChange}
     placeholder={placeholder}
@@ -9,6 +9,7 @@ export default ({ onChange, placeholder, value, name, type, id }) => (
     name={name}
     type={type}
     id={id}
+    margin={margin}
   />
 );
 
@@ -19,7 +20,7 @@ const CustomInput = styles.input`
   border: 1px solid #89caf0;
   border-radius: 4px;
   box-sizing: border-box;
-  margin-top: 2rem;
+  margin-top: ${props => `${props.margin ? props.margin : '2'}rem`};
   margin-bottom: 1rem;
   text-transform: capitalize
   `;
