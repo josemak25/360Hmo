@@ -22,5 +22,5 @@ const CustomInput = styles.input`
   box-sizing: border-box;
   margin-top: ${props => `${props.margin ? props.margin : '2'}rem`};
   margin-bottom: 1rem;
-  text-transform: capitalize
+  // text-transform: capitalize
   `;

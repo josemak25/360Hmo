@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Home, Login, UserDashBoard, AdminDashBoard, Register, Footer } from '../pages/index';
+import { Home, Login, UserDashBoard, AdminDashBoard, Register } from '../pages/index';
 
 const Routes = ({ user }) => {
   return (
@@ -11,10 +11,6 @@ const Routes = ({ user }) => {
       <Route exact path="/dashboard" component={UserDashBoard} />
     </Router>
   );
-};
-
-Routes.defaultProps = {
-  user: {}
 };
 
 export default Routes;

@@ -4,6 +4,7 @@ import NavBar from '../../commons/NavBar';
 import CustomInput from '../../components/input';
 import CustomButton from '../../components/button';
 import CustomSelect from '../../components/select';
+import PayStackModal from '../../components/payStackModal';
 
 export default function Register({ inputFields, selectFields }) {
   const userData = {
@@ -16,10 +17,19 @@ export default function Register({ inputFields, selectFields }) {
     lga: '',
     age: '',
     gender: '',
-    address: ''
+    address: '',
+    paymentType: '',
+    plan: '',
+    town: ''
   };
+  let amount = 1500;
+
   const [fields, setField] = useState(userData);
-  const [buttonAction, setButtonAction] = useState({ amount: 'Pay ₦1500.00 now', agree: false });
+  const [buttonAction, setButtonAction] = useState({
+    amount: 1500,
+    agreeToTerms: true,
+    openModal: false
+  });
 
   const handleChange = ({ target }) => {
     const name = target.name;
@@ -29,23 +39,22 @@ export default function Register({ inputFields, selectFields }) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log({ ...fields });
+    setButtonAction({ ...buttonAction, openModal: true });
   };
 
   const calculatePlanAmount = ({ target }) => {
     const name = target.name;
     fields[name] = target.value;
-    let amount = 0;
     if (target.value === 'monthly') amount = 1500;
     if (target.value === 'quarterly') amount = 1500 * 3;
     if (target.value === 'annually') amount = 1500 * 12;
 
-    setButtonAction({ ...buttonAction, amount: `Pay ₦${amount}.00 now` });
+    setButtonAction({ ...buttonAction, amount });
     setField({ ...fields });
   };
 
   const handleAgreement = ({ target }) => {
-    setButtonAction({ ...buttonAction, agree: target.checked });
+    setButtonAction({ ...buttonAction, agreeToTerms: !target.checked });
   };
 
   return (
@@ -90,10 +99,15 @@ export default function Register({ inputFields, selectFields }) {
           <input type="checkbox" className="agree-to-terms" onChange={handleAgreement} />
           <span>I agree to RelianceHMO's Retail plan Retail plan terms and conditions</span>
           <CustomButton
-            name={buttonAction.amount}
+            name={`Pay ₦${buttonAction.amount}.00 now`}
             bgColor="#a9a9a9"
             id="loginButton"
-            disabled={buttonAction.agree}
+            disable={buttonAction.agreeToTerms}
+          />
+          <PayStackModal
+            amount={buttonAction.amount}
+            openModal={buttonAction.openModal}
+            payload={fields}
           />
         </FormWrapper>
       </Container>
@@ -132,6 +146,11 @@ Register.defaultProps = {
       type: 'text',
       name: 'address',
       placeholder: 'your address'
+    },
+    {
+      type: 'text',
+      name: 'town',
+      placeholder: 'your town'
     },
     {
       type: 'number',
